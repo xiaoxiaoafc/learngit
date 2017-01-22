@@ -1,0 +1,77 @@
+@charset "utf-8";
+/*顶部*/
+.t_hader .tbg{width:100%;height:30px;background:#f2f2f2;position: fixed;top:0px;z-index:1000000;border-top:1px solid #8DEEEE;border-bottom: 1px solid #ececec; }
+.t_hader .ht_l, .ht_r{height:30px;line-height: 30px;font-size:12px}
+.t_hader .ht_l a{margin-left:14px;}
+.t_hader .ht_l .login{color:#D83400}
+.t_hader .ht_l .login:hover{text-decoration:underline; }
+
+.t_hader .r_list a{margin-left:16px;}
+.t_hader .ht_r .ht_r_list{width:80px;text-align: center;}
+.t_hader .ht_r .ht_r_list .user_post a{display: block;background:#ffffff}
+
+.t_hader .hc .hc_l{width:270px;height:100px; }
+.t_hader .hc .hc_l .logo{width:270px; height:100px;background: url(../images/logo.jpg) no-repeat;}
+.t_hader .hc .hc_c{width:600px;height:100px;}
+.t_hader .hc .hc_c .text{margin-top:40px;margin-left:80px;width:400px;height:22px;border:2px solid #D83400; padding:5px; line-height: 22px;font-size:14px;color:#777}
+.t_hader .hc .hc_c .submit{margin-top:40px;width:80px;height:36px;background:#D83400;font-size:14px;color:#ffffff;border:none }
+.t_hader .hc .hc_r{width:320px;height:100px; }
+.t_hader .hc .hc_r h2{margin-top:43px;margin-left:20px}
+
+
+.nav{width:100%;height:38px;background:#D50304;;float:left}
+.nav .navlist li{float:left;width:124px;height:38px;line-height: 38px;color:#ffffff;font-size:18px;text-align: center;cursor: pointer;}
+.nav .navlist li:hover{background:#ffffff;color:#555;border-top:2px solid #D50304;}
+.nav .navlist li:first-child:hover{background:#D50304;color:#ffffff;border-top:none;}
+.slider .selecttype{width:290px;height:370px;position:absolute;top:172px;left:75px;font-size:12px;position: absolute;}
+.slider .selecttype .select_title{background:#ccc;height: 28px;line-height: 28px; padding-left: 1em;}
+.slider .selecttype .selecttype_list{padding-top:5px;padding-right: 10px; height: 40px;background:#CCFFFF}
+.slider .selecttype .selecttype_list a{display: block;float:left;margin-left:12px}
+
+.slider .selecttype .select_title2{width:800px;height: 400px;position: absolute; ;left:290px;top:0px;border:none;background:#ffffff;position: absolute;}
+.slider .selecttype .select_title2 div{margin-top:8px;border-bottom: 1px dotted #cccccc;float:left;padding-bottom: 10px}
+.slider .selecttype .select_title2  span{margin-left:8px;margin-top:18px;font-size:14px;color:#CCCC33;font-weight: bold;display: blokc;float:left}
+.slider .selecttype .select_title2 div ul{margin-left:40px;display: block;float:left;margin-top:8px;width:680px}
+.slider .selecttype .select_title2 div ul li a{float:left;width:60px;margin-top:7px;text-align: center; border-right:1px solid #cccccc;margin-top:10px}
+.slider .selecttype .select_title2 div ul li a:hover{color:red}
+
+.central .productTab ul li{border-top:2px solid #ddd ;background:#eee;width:307px; height: 40px; font-size:14px;float:left; line-height: 40px;text-align: center;cursor: default;display: block};
+.central .productTab .products  {}
+.central .productTab .products a{display: block; border:1px solid #ffffff;width:227px;float:left;margin-top:20px;height: 320px}
+.central .productTab .products a:hover{ border: 1px solid red;}
+.central .productTab .products a img{display: block; width:227px;;height: 250px}
+.central .productTab .products a h2{font-size:16px;text-align: center;margin-top:10px}
+.central .productTab .products a span{font-size:16px;text-align: center;margin-top:10px;display: block;color:#D50304;}
+
+.announcement{margin-left:10px;border:1px solid #ddd;width:265px}
+.announcement .title{font-size:14px; background: #eee;heigth:40px;line-height: 40px; text-align: center;}
+.announcement a{text-indent: 2em;height: 30px;line-height: 30px;display: block}
+
+.heatproductlist .product{border-bottom: 1px dotted #eee;float:left;}
+.heatproductlist .product .product_title{ height: 38px;width:100%;cursor: default;}
+.heatproductlist .product .product_title em{text-indent: 1em;display: block; float:left; height: 38px;line-height:38px; left: float;color:#FF4E00;}
+.heatproductlist .product .product_title a{display: block;float: left; height: 38px; left: float;line-height:38px;font-weight: bold;font-szie:14px}
+.heatproductlist .product .product_content{display: none}
+.heatproductlist .product .product_content a{display: block; float:left;height: 70px;}
+.heatproductlist .product .product_content img{width:70px;height: 50px;display: block;margin-top:12px;margin-left:10px}
+.heatproductlist .product .product_content div{float:left}
+.heatproductlist .product .product_content div span{display: block;text-align: left;font-size:15px;color:red;float:left;width:100%;margin-left:20px}
+.heatproductlist .product .product_content div a{display: block;float:left;background:#FF4E00;width:70px;height:30px;margin-top:7px}
+.heatproductlist .product .product_content div a:hover{color:#555}
+
+.bottom_product{margin-left:75px;margin-top:15px}
+.bottom_product .bottom_product_list_title{height:50px;border-bottom: 2px solid red}
+.bottom_product .bottom_product_list_title span{width:50px;height:50px;background:red;display: block;float:left;;line-height: 50px;text-align: center;font-size:16px;color: #ffffff;font-weight: bold;}
+.bottom_product .bottom_product_list_title h2{display: block;padding-top:25px;margin-left:65px;float:left; }
+.bottom_product .bottom_product_list_title .bottom_product_list_titlelist{margin-left: 630px}
+.bottom_product .bottom_product_list_title .bottom_product_list_titlelist li{float:left;font-size:15px;padding-top:8px;margin-left:14px}
+
+.bottom_product .bottom_product_list img{float:left}
+.bottom_product .bottom_product_list ul {float:left;display: block}
+.bottom_product .bottom_product_list ul li{float:left;width:232px;padding:0px;height: 270px;border:1px solid #ffffff;margin-top:5px}
+.bottom_product .bottom_product_list ul li:hover{border:1px solid red;}
+.bottom_product .bottom_product_list ul li img{width:225px;height: 200px;margin-left:7px;float:left}
+.bottom_product .bottom_product_list ul li .productname{display: block;text-align: center;font-size:15px;margin-top:15px;float:left;text-align: center;width: 100%}
+.bottom_product .bottom_product_list ul li .productprice{display: block;text-align: center;float:left;width:100%;margin-top:10px;color:#d50304;font-size:14px}
+
+

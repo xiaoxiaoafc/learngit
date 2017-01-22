@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>xiaoyi.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <link rel="stylesheet" type="text/css" href="css/xiaoyi.css">
+     <link rel="stylesheet" type="text/css" href="css/flexslider.css">
+  </head>
+  
+  <body>
+  	<div class="main_home">
+  		<div class="nav_line"></div>
+  		<p class="nav_logo">
+  			<img class="nav_logo_img" src="images/logo.png">
+  		</p>
+  		<div class="nav">
+  			<ul>
+  				<li class="cur"><a href="javascript:void(0)">首页</a></li>
+  				<li><a href="javascript:void(0)">小忆机器人</a></li>
+  				<li><a href="javascript:void(0)">服务支持</a></li>
+  				<li><a href="javascript:void(0)">app下载</a></li>
+  				<li><a href="javascript:void(0)">体验小忆</a></li>
+  				<li><a href="javascript:void(0)">关于我们</a></li>
+  			</ul>
+  			<div class="curBg" style="left:0px; width:86px"></div>
+  			<p class="more">
+  				<a href="javascript:void(0)">立即购买</a>
+  			</p>
+  		</div>
+  		
+  		<div class="home_block">
+				<div class="home_banner flexslider">
+					<ul class="slides">
+						<li>
+							<div class="slide">
+								<a target="_blank" href="http://item.jd.com/2965287.html"><img
+										src="images/index.jpg">
+								</a>
+							</div>
+						</li>
+						<li>
+							<div class="slide">
+								<img src="images/hb001.gif">
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="home-video" >
+					<img class="home_banner2" alt="" src="images/home-video-bannner.jpg">
+					<div class="video-block">
+						 <div class="video-img">
+						 	 <img alt="" src="images/video-play.png">
+						 </div>
+					</div>
+				</div>
+				<div class="footer">
+					 <div class="footer-main">
+					 	 
+					 </div>
+				</div>
+  		</div>
+  </body>
+  <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+  <script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
+  <script type="text/javascript">
+  	 $(function(){
+  	 	 $('.flexslider').flexslider({  
+       		  animation: 'slide',
+                controlNav: true,
+                directionNav: true,
+                animationLoop: true,
+                pauseOnHover: true,
+                slideshow: true,
+                useCSS: false,
+                slideshow: true,                //Boolean: Animate slider automatically 载入页面时，是否自动播放
+                slideshowSpeed: 4000
+    	 });  
+  	 	   	 
+  	 	  var $cur = $(".nav ul li.cur");
+  	 	  var curP = $cur.position().left;
+  	 	  var curW = $cur.outerWidth(true);
+  	 	  var $slider = $(".curBg");
+  	 	  var $elementTage = $(".nav ul li a");
+  	 	  var $nav = $(".nav");
+  	 	  $elementTage.mouseenter(function(){
+  	 	  	 var $ctage= $(this).parent();
+  	 	  	 var cwidth = $ctage.outerWidth(true);
+  	 	  	 var cP = $ctage.position().left;
+  	 	  	 $slider.stop(true,true).animate({
+  	 	  	 	left:cP , width: cwidth
+  	 	  	 },600);
+  	 	  });
+  	 	  
+  	 	  $nav.mouseleave(function(){
+  	 	  	 $slider.stop(true,true).animate({
+  	 	  	 	left:curP , width: curW
+  	 	  	 },600);
+  	 	  });
+  	 	  
+  	 });
+  </script>
+</html>
