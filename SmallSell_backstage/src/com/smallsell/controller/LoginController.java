@@ -1,6 +1,7 @@
 package com.smallsell.controller;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
@@ -12,8 +13,8 @@ import net.sf.json.JSONObject;
 @RequestMapping("/login")
 public class LoginController extends BaseController{
 	 private final Logger logger = Logger.getLogger(BaseController.class);  
-	public void login(HttpServletResponse response,String userName,String password){
-		JSONObject result = 
-		responseOutWithJson();
+	public void login(HttpServletResponse response,String userName,String password, HttpSession session){
+		JSONObject result = userService.login(userName, password, session);
+		responseOutWithJson(response, response);
 	}
 }

@@ -6,15 +6,19 @@ import java.io.PrintWriter;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.smallsell.interceptor.SecurityInterceptor;
+import com.smallsell.service.UserService;
 
 import net.sf.json.JSONObject;
 
 @Controller
 public class BaseController{
 	 private final Logger logger = Logger.getLogger(BaseController.class);  
+	 
+	@Autowired protected UserService userService; 
 	protected void responseOutWithJson(HttpServletResponse response,  
 	        Object responseObject) {  
 	    //将实体对象转换为JSON Object转换  
