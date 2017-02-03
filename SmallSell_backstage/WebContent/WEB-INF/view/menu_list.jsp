@@ -1,19 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<link rel="stylesheet" href="css/bootstrap-table/bootstrap-table.min.css">
-<script src="js/bootstrap-table/bootstrap-table.min.js"></script>
-<script src="js/bootstrap-table/bootstrap-table-zh-CN.min.js"></script>
 <div class="container-fluid" id="loglist">
 	<div class="row-fluid">
 		<div class="span12">
 			<ul class="breadcrumb">
-				<li><i class="icon-home"></i> <a href="javascript:return;">主页</a><i class="icon-angle-right"></i></li>
-				<c:forEach var = "menu" items="${titleMenus}">
-				   <li><a href="javascript:return;">${menu.meun_name}</a> <i class="icon-angle-right"></i></li>
+				<li><i class="icon-home"></i> <a href="javascript:return;">主页</a><i
+					class="icon-angle-right"></i></li>
+				<c:forEach var="menu" items="${titleMenus}">
+					<li><a href="javascript:return;">${menu.meun_name}</a> <i
+						class="icon-angle-right"></i></li>
 				</c:forEach>
 			</ul>
-			<!-- END PAGE TITLE & BREADCRUMB-->
 		</div>
 	</div>
 	<div class="row-fluid">
@@ -24,635 +22,62 @@
 						<i class="icon-edit"></i>菜单管理
 					</div>
 				</div>
-				<div class="portlet-body no-more-tables">
-					<div id="toolbar" class="btn-group">
-						<button id="btn_add" type="button" class="btn btn-default">
-							<i class=" icon-plus"></i>新增
-						</button>
-						<button id="btn_edit" type="button" class="btn btn-default">
-							<i class="icon-pencil"></i>修改
-						</button>
-						<button id="btn_delete" type="button" class="btn btn-default">
-							<i class="icon-remove"></i>删除
-						</button>
+				<div class="portlet-body">
+					<div class="btn-group ">
+						<button class="btn btn-default"><i class="icon-plus">添加</i></button>
+						<button class="btn btn-default"><i class="icon-remove">删除</i></button>
 					</div>
-					<table data-toggle="table" data-pagination="true"
-						data-pagination-loop="true" data-search="true"
-						data-show-refresh="true" data-show-columns="true"
-						data-search-align="right" data-toolbar="#toolbar"
-						data-buttons-align="right">
+					<div class="" style="float:right;">
+						<input type="text"/><button class="btn btn-success">查询</button>
+					</div>
+					<table class="table table-bordered">
 						<thead>
 							<tr>
-								<th data-field="state" data-checkbox="true">Item ID</th>
-								<th>Item Name</th>
-								<th>Item Price</th>
+								<th></th>
+								<th>栏目名称</th>
+								<th>栏目地址</th>
+								<th>栏目描述</th>
+								<th>状态</th>
+								<th>操作</th>
+							</tr>
+							<tr>
+								<td><input type="checkbox"></td>
+								<td>www.baidu.com</td>
+								<td>这是一个栏目</td>
+								<td>启用</td>
+								<td>得到</td>
+								<td>
+									<a class=""><i class="icon-pencil"></i>编辑</a>&nbsp;&nbsp;&nbsp;
+									<a class=""><i class="icon-remove"></i>删除</a>
+								</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox"></td>
+								<td>www.baidu.com</td>
+								<td>这是一个栏目</td>
+								<td>启用</td>
+								<td>得到</td>
+								<td>
+									<a class=""><i class="icon-pencil"></i>编辑</a>&nbsp;&nbsp;&nbsp;
+									<a class=""><i class="icon-remove"></i>删除</a>
+								</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox"></td>
+								<td>www.baidu.com</td>
+								<td>这是一个栏目</td>
+								<td>启用</td>
+								<td>得到</td>
+								<td>
+									<a class=""><i class="icon-pencil"></i>编辑</a>&nbsp;&nbsp;&nbsp;
+									<a class=""><i class="icon-remove"></i>删除</a>
+								</td>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-							<tr>
-								<td>1</td>
-								<td>Item 1</td>
-								<td>$1</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>Item 2</td>
-								<td>$2</td>
-							</tr>
-						</tbody>
 					</table>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
