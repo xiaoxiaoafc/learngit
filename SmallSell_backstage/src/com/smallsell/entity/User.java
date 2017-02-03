@@ -11,8 +11,6 @@ public class User {
 
     private Integer status;
 
-    private String roles;
-
     public Integer getId() {
         return id;
     }
@@ -51,13 +49,5 @@ public class User {
 
     public void setStatus(Integer status) {
         this.status = status;
-    }
-
-    public String getRoles() {
-        return roles;
-    }
-
-    public void setRoles(String roles) {
-        this.roles = roles == null ? null : roles.trim();
     }
 }

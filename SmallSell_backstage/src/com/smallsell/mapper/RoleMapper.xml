@@ -5,11 +5,10 @@
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="role_name" property="role_name" jdbcType="VARCHAR" />
     <result column="descn" property="descn" jdbcType="VARCHAR" />
-    <result column="menus" property="menus" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, role_name, descn, menus, status
+    id, role_name, descn, status
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -23,9 +22,9 @@
   </delete>
   <insert id="insert" parameterType="com.smallsell.entity.Role" >
     insert into role (id, role_name, descn, 
-      menus, status)
+      status)
     values (#{id,jdbcType=INTEGER}, #{role_name,jdbcType=VARCHAR}, #{descn,jdbcType=VARCHAR}, 
-      #{menus,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER})
+      #{status,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.smallsell.entity.Role" >
     insert into role
@@ -38,9 +37,6 @@
       </if>
       <if test="descn != null" >
         descn,
-      </if>
-      <if test="menus != null" >
-        menus,
       </if>
       <if test="status != null" >
         status,
@@ -56,9 +52,6 @@
       <if test="descn != null" >
         #{descn,jdbcType=VARCHAR},
       </if>
-      <if test="menus != null" >
-        #{menus,jdbcType=VARCHAR},
-      </if>
       <if test="status != null" >
         #{status,jdbcType=INTEGER},
       </if>
@@ -73,9 +66,6 @@
       <if test="descn != null" >
         descn = #{descn,jdbcType=VARCHAR},
       </if>
-      <if test="menus != null" >
-        menus = #{menus,jdbcType=VARCHAR},
-      </if>
       <if test="status != null" >
         status = #{status,jdbcType=INTEGER},
       </if>
@@ -86,7 +76,6 @@
     update role
     set role_name = #{role_name,jdbcType=VARCHAR},
       descn = #{descn,jdbcType=VARCHAR},
-      menus = #{menus,jdbcType=VARCHAR},
       status = #{status,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

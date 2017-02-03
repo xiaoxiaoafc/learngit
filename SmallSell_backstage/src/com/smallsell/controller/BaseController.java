@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.smallsell.interceptor.SecurityInterceptor;
+import com.smallsell.service.MenuService;
 import com.smallsell.service.UserService;
 
 import net.sf.json.JSONObject;
@@ -19,6 +20,8 @@ public class BaseController{
 	 private final Logger logger = Logger.getLogger(BaseController.class);  
 	 
 	@Autowired protected UserService userService; 
+	@Autowired protected MenuService menuService; 
+	
 	protected void responseOutWithJson(HttpServletResponse response,  
 	        Object responseObject) {  
 	    //将实体对象转换为JSON Object转换  

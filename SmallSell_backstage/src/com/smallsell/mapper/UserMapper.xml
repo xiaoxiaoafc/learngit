@@ -7,10 +7,9 @@
     <result column="password" property="password" jdbcType="VARCHAR" />
     <result column="descn" property="descn" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="INTEGER" />
-    <result column="roles" property="roles" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, user_name, password, descn, status, roles
+    id, user_name, password, descn, status
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -24,11 +23,9 @@
   </delete>
   <insert id="insert" parameterType="com.smallsell.entity.User" >
     insert into user (id, user_name, password, 
-      descn, status, roles
-      )
+      descn, status)
     values (#{id,jdbcType=INTEGER}, #{user_name,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{descn,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{roles,jdbcType=VARCHAR}
-      )
+      #{descn,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.smallsell.entity.User" >
     insert into user
@@ -48,9 +45,6 @@
       <if test="status != null" >
         status,
       </if>
-      <if test="roles != null" >
-        roles,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -67,9 +61,6 @@
       </if>
       <if test="status != null" >
         #{status,jdbcType=INTEGER},
-      </if>
-      <if test="roles != null" >
-        #{roles,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -88,9 +79,6 @@
       <if test="status != null" >
         status = #{status,jdbcType=INTEGER},
       </if>
-      <if test="roles != null" >
-        roles = #{roles,jdbcType=VARCHAR},
-      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -99,8 +87,28 @@
     set user_name = #{user_name,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       descn = #{descn,jdbcType=VARCHAR},
-      status = #{status,jdbcType=INTEGER},
-      roles = #{roles,jdbcType=VARCHAR}
+      status = #{status,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+    <select id="selectUser" parameterType="com.smallsell.entity.User" resultType="com.smallsell.entity.User">
+  	 select *from user 
+  	 <where>
+  	 	<if test="id != null" >
+        and id = #{id}  
+      </if>
+      <if test="user_name != null" >
+       and user_name = #{user_name} 
+      </if>
+      <if test="password != null" >
+       and  password = #{password} 
+      </if>
+      <if test="descn != null" >
+       and descn = #{descn}
+      </if>
+      <if test="status != null" >
+        and status = #{status}
+      </if>
+  	 </where> 
+  </select>
 </mapper>

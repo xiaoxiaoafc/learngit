@@ -22,14 +22,13 @@
 	<!-- 拦截器配置 -->
 	<mvc:interceptors>
 		<mvc:interceptor>
-			<mvc:mapping path="/*" />
-			<bean class="com.smallsell.interceptor.SecurityInterceptor">
-				<property name="excludedUrls">
-					<list>
-						<value>/login</value>
-					</list>
-				</property>
-			</bean>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/css/**"/>
+			<mvc:exclude-mapping path="/js/**"/>
+			<mvc:exclude-mapping path="/image/**"/>
+			<mvc:exclude-mapping path="/user/loginIn"/>
+			<mvc:exclude-mapping path="/user/login"/>
+			<bean class="com.smallsell.interceptor.SecurityInterceptor"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>
 	<!-- 配置视图解析器 -->

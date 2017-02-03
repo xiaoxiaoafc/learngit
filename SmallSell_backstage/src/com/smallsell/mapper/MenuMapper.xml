@@ -79,4 +79,34 @@
       parent_id = #{parent_id,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <select id="getMenusByRoles" resultType="com.smallsell.entity.Menu">
+  		 select <include refid="Base_Column_List"/> from menu m where m.id in( select rm.menu_id from  role_menu rm where rm.role_id in 
+  		 	<foreach item="roles" index="index" collection="list" open="(" separator="," close=")">  
+  				#{roles}  
+ 			</foreach>  
+  		 
+  		 )
+  </select>
+  
+  <select id="getParentAllMenu" resultType="com.smallsell.entity.Menu">
+  	 select *from menu where parent_id = 0
+  </select>
+  <select id="selectMenus" resultType="com.smallsell.entity.Menu">
+  	select <include refid="Base_Column_List"/> from menu
+  	<where>
+  		<if test="id != null" >
+        and id = #{id}
+      </if>
+      <if test="meun_name != null" >
+        and meun_name=#{meun_name}
+      </if>
+      <if test="url != null" >
+        and url=#{url}
+      </if>
+      <if test="parent_id != null" >
+        and parent_id=#{parent_id}
+      </if>
+  	</where>
+  </select>
 </mapper>

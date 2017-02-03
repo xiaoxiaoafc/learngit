@@ -7,8 +7,6 @@ public class Role {
 
     private String descn;
 
-    private String menus;
-
     private Integer status;
 
     public Integer getId() {
@@ -33,14 +31,6 @@ public class Role {
 
     public void setDescn(String descn) {
         this.descn = descn == null ? null : descn.trim();
-    }
-
-    public String getMenus() {
-        return menus;
-    }
-
-    public void setMenus(String menus) {
-        this.menus = menus == null ? null : menus.trim();
     }
 
     public Integer getStatus() {
